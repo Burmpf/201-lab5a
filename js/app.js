@@ -8,16 +8,13 @@ Write a function called sum() that takes in two numbers as arguments and then re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSum() function below and check the console to see if the test passes.*/
 
 // Write your code here
-let numbers = [4, 7];
-function sum(arr) { //eslint-disable-line
-  let total = arr[0] + arr[1];
-  let message = `The sum of ${arr[0]} and ${arr[1]} is ${total}.`;
-  return [total, message];
 
+function sum(a, b) { //eslint-disable-line
+  let totalSum = a + b;
+  let message = `The sum of ${a} and ${b} is ${totalSum}.`;
+  return [totalSum, message];
 }
 
-let result = sum(numbers);
-console.log(result);
 // Here is the test for sum(); uncomment it to run it
 testSum(4, 7);
 //It shows up in my console and still says it fails using this test so Im calling it a pass.
@@ -36,11 +33,13 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
-
+  let totalMulti = a * b;
+  let messageMulti = `The product of ${a} and ${b} is ${totalMulti}.`;
+  return [totalMulti, messageMulti];
 }
 
 // Here is the test for multiply(); uncomment it to run it
-// testMultiply(5,9);
+testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
