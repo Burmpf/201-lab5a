@@ -56,11 +56,15 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-  let sumQ3 = a + b + c;
-  let multiQ3 = a * b * c;
-  let message1Q3 = `${a} and ${b} and ${c} sum to ${sumQ3}.`;
-  let message2Q3 = `The product of ${a} and ${b} and ${c} is ${multiQ3}.`;
-  return [sumQ3, multiQ3, message1Q3, message2Q3];
+  let sumQ3 = sum(a, b)[0];
+  let sumAll = sum(sumQ3, c)[0];
+
+// let multi1 = multiply(a, b);
+  let multiQ3 = multiply(multiply(a,b)[0], c);
+
+  let message1Q3 = `${a} and ${b} and ${c} sum to ${sumAll}.`;
+  let message2Q3 = `The product of ${a} and ${b} and ${c} is ${multiQ3[0]}.`;
+  return [sumAll, multiQ3[0], message1Q3, message2Q3];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
@@ -82,13 +86,12 @@ Test this function by hand in the console to get it working, and when you think 
 let testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-  let sumTotal1 = sum(sumArr)[0, 1];
-  let sumTotal2 = sum(sumTotal1, sumArr)[2];
-  let sumTotal = sum(sumTotal1, sumTotal2);
-  let messageQ4 = `${sumArr[0]},${sumArr[1]},${sumArr[2]} was passed in as an array of numbers, and ${sumTotal} is their sum.`;
-  return [sumTotal, messageQ4];
+  let sumTotal1 = sum(sumArr[0], sumArr[1]);
+  let sumFinal = sum(sumTotal1[0], sumArr[2])[0];
+  let messageQ4 = `${sumArr[0]},${sumArr[1]},${sumArr[2]} was passed in as an array of numbers, and ${sumFinal} is their sum.`;
+  return [sumFinal, messageQ4];
 }
-
+console.log(sumArray(testArray));
 // Here is the test for sumArray(); uncomment it to run it
  testSumArray(testArray);
 
